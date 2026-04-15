@@ -1,19 +1,17 @@
 import Header from './components/Header'
-import Main from './components/Main'
 import Sidebar from './components/Sidebar'
-import Footer from './components/Footer'
 import ProductList from './components/Productlist'
 import Banner from './components/Banner'
-
+import Footer from './components/Footer'
 
 function App() {
   return (
     <>
       <Header />
-      <Main>
+      <main>
         <Sidebar />
         <ProductList />
-      </Main>
+      </main>
       <Banner />
       <Footer />
     </>

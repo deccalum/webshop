@@ -1,3 +1,3 @@
 export default function Banner() {
-  return <section>Banner</section>;
+  return <section>banner</section>;
 }

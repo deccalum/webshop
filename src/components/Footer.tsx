@@ -1,3 +1,3 @@
-export default function Footer() {
-  return <footer>Footer</footer>;
+export default function footer() {
+  return <footer>footer</footer>;
 }

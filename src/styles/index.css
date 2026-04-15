@@ -1,0 +1,139 @@
+/* ── Google Fonts ───────────────────────────────────────
+   Google Sans Code
+   ──────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500;700&display=swap');
+
+
+/* ── Design Tokens (Light) ──────────────────────────────
+   All colors, spacing and type scales live here.
+   Components reference vars — never raw values.
+   ──────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg:         #ffffff;
+  --color-surface:    #f5f5f5;
+  --color-border:     #e0e0e0;
+  --color-text:       #000000;
+  --color-text-muted: #666666;
+  --color-accent:     #000000;
+  --color-accent-fg:  #ffffff;
+
+  /* Typography */
+  --font-sans: 'Google Sans Code', 'Courier New', monospace;
+  --font-size-xs:   0.75rem;   /* 12px */
+  --font-size-sm:   0.875rem;  /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg:   1.125rem;  /* 18px */
+  --font-size-xl:   1.25rem;   /* 20px */
+  --font-size-2xl:  1.5rem;    /* 24px */
+  --font-size-3xl:  2rem;      /* 32px */
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Layout */
+  --header-height: 4rem;
+  --max-width: 80rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
+
+/* ── Dark Mode ──────────────────────────────────────────
+   Responds to OS preference automatically.
+   Manual override: set data-theme="dark" on <html>.
+   ──────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:         #000000;
+    --color-surface:    #111111;
+    --color-border:     #2a2a2a;
+    --color-text:       #ffffff;
+    --color-text-muted: #999999;
+    --color-accent:     #ffffff;
+    --color-accent-fg:  #000000;
+  }
+}
+
+[data-theme="dark"] {
+  --color-bg:         #000000;
+  --color-surface:    #111111;
+  --color-border:     #2a2a2a;
+  --color-text:       #ffffff;
+  --color-text-muted: #999999;
+  --color-accent:     #ffffff;
+  --color-accent-fg:  #000000;
+}
+
+[data-theme="light"] {
+  --color-bg:         #ffffff;
+  --color-surface:    #f5f5f5;
+  --color-border:     #e0e0e0;
+  --color-text:       #000000;
+  --color-text-muted: #666666;
+  --color-accent:     #000000;
+  --color-accent-fg:  #ffffff;
+}
+
+/* ── Reset ──────────────────────────────────────────────
+   Minimal — removes browser inconsistencies only.
+   ──────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+}
+
+/* ── Breakpoints (reference) ────────────────────────────
+   Use these in component CSS files:
+     @media (min-width: 640px)  → sm  (tablet portrait)
+     @media (min-width: 768px)  → md  (tablet landscape)
+     @media (min-width: 1024px) → lg  (desktop)
+     @media (min-width: 1280px) → xl  (wide desktop)
+   ──────────────────────────────────────────────────────── */
