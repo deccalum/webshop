@@ -1,8 +1,5 @@
 import '../styles/adbox.css'
 
-// possibly add variants or dynamically based on page
-// on start page: flyer 
-
 export default function AdBox() {
   return (
     <div className="adbox">

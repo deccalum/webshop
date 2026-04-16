@@ -1,4 +1,4 @@
-import { Heart, Eye, Plus } from 'lucide-react'
+import { MdFavoriteBorder, MdVisibility, MdAdd } from 'react-icons/md'
 import '../styles/card.css'
 
 interface CardProps {
@@ -14,7 +14,6 @@ interface CardProps {
 }
 
 export default function Card({
-  id,
   title,
   category,
   price,
@@ -32,16 +31,16 @@ export default function Card({
         {badge && <span className="card__badge">{badge}</span>}
 
         <button className="card__favorite" aria-label="Add to favorites">
-          <Heart size={18} />
+          <MdFavoriteBorder size={18} />
         </button>
 
         {inStock && (
           <div className="card__actions">
             <button className="card__action-btn" aria-label="Quick view">
-              <Eye size={18} />
+              <MdVisibility size={18} />
             </button>
             <button className="card__action-btn" aria-label="Add to cart">
-              <Plus size={18} />
+              <MdAdd size={18} />
             </button>
           </div>
         )}

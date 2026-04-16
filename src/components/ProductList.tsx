@@ -1,10 +1,9 @@
-import { ChevronLeft, ChevronRight, Grid3X3, List } from 'lucide-react'
+import { MdChevronLeft, MdChevronRight, MdDashboard, MdList } from 'react-icons/md'
 import Card from './Card'
 import { MOCK_PRODUCTS } from '../data/mockproducts'
 import '../styles/productlist.css'
 
-
-export default function ProductList() {
+export default function ProductMdList() {
   return (
     <div className="productlist">
       {/* Header: Title + Sort + View */}
@@ -15,10 +14,10 @@ export default function ProductList() {
           {/* View toggle (cosmetic) */}
           <div className="productlist__view-toggle">
             <button className="productlist__view-btn is-active" aria-label="Grid view">
-              <Grid3X3 size={18} />
+              <MdDashboard size={18} />
             </button>
-            <button className="productlist__view-btn" aria-label="List view">
-              <List size={18} />
+            <button className="productlist__view-btn" aria-label="MdList view">
+              <MdList size={18} />
             </button>
           </div>
 
@@ -47,7 +46,7 @@ export default function ProductList() {
       {/* Pagination (cosmetic) */}
       <nav className="productlist__pagination" aria-label="Pagination">
         <button className="productlist__pagination-btn" aria-label="Previous page">
-          <ChevronLeft size={18} />
+          <MdChevronLeft size={18} />
         </button>
 
         <div className="productlist__page-numbers">
@@ -60,7 +59,7 @@ export default function ProductList() {
         </div>
 
         <button className="productlist__pagination-btn" aria-label="Next page">
-          <ChevronRight size={18} />
+          <MdChevronRight size={18} />
         </button>
       </nav>
     </div>

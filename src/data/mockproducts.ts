@@ -1,4 +1,16 @@
-export const MOCK_PRODUCTS = [
+export interface Product {
+  id: number;
+  title: string;
+  category: string;
+  price: number;
+  originalPrice?: number;
+  rating: number;
+  image: string;
+  badge?: string;
+  inStock: boolean;
+}
+
+export const MOCK_PRODUCTS: Product[] = [
   {
     id: 1,
     title: 'MacBook Pro 16"',

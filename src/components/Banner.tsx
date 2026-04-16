@@ -3,7 +3,7 @@ import '../styles/banner.css'
 export default function Banner() {
   return (
     <section className="banner">
-      {/* Decorative blur circles (overflow: hidden clips these) */}
+      {/* Decorative blur circles */}
       <div className="banner__decoration banner__decoration--left" />
       <div className="banner__decoration banner__decoration--right" />
 
