@@ -1,0 +1,150 @@
+/* ── Banner ──────────────────────────────────────────── */
+.banner {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-accent);
+  color: var(--color-accent-fg);
+  padding: var(--space-16) var(--space-6);
+}
+
+/* ── Decorative blur circles (overflow: hidden clips them) ──
+   These extend beyond the section bounds with negative positioning.
+   The `overflow: hidden` on .banner prevents them from leaking visually.
+   ──────────────────────────────────────────────────────────── */
+.banner__decoration {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.banner__decoration--left {
+  top: -10%;
+  left: -5%;
+  width: 10rem;
+  height: 20rem;
+  background-color: var(--color-fg-overlay);
+}
+
+.banner__decoration--right {
+  bottom: -10%;
+  right: -5%;
+  width: 5rem;
+  height: 20rem;
+  background-color: var(--color-fg-overlay-heavy);
+}
+
+/* ── Container (sits above decorations) ──────────────────── */
+.banner__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .banner__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-8);
+  }
+}
+
+/* ── Content (text) ──────────────────────────────────────── */
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 30rem;
+}
+
+.banner__title {
+  font-size: var(--font-size-3xl);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-accent-fg);
+}
+
+.banner__subtitle {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: var(--color-accent-fg);
+}
+
+/* ── Form ────────────────────────────────────────────────── */
+.banner__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 20rem;
+}
+
+.banner__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .banner__inputs {
+    flex-direction: row;
+    gap: var(--space-2);
+  }
+}
+
+.banner__input {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-overlay);
+  background-color: white;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  outline: none;
+  transition: background-color var(--transition);
+}
+
+.banner__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.banner__input:focus {
+  background-color: white;
+}
+
+.banner__button {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  border: none;
+  background-color: var(--color-accent-fg);
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.banner__button:hover {
+  background-color: white;
+}
+
+/* ── Disclaimer ──────────────────────────────────────────– */
+.banner__disclaimer {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  line-height: 1.5;
+  color: var(--color-accent-fg);
+}
