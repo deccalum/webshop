@@ -1,18 +1,15 @@
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Sidebar from './components/Sidebar'
-import ProductList from './components/Productlist'
-import Banner from './components/Banner'
 import Footer from './components/Footer'
+import ShopPage from './pages/ShopPage'
 
 function App() {
   return (
     <>
       <Header />
-      <main>
-        <Sidebar />
-        <ProductList />
-      </main>
-      <Banner />
+      <Routes>
+        <Route path="/" element={<ShopPage />} />
+      </Routes>
       <Footer />
     </>
   )

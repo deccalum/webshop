@@ -1,0 +1,19 @@
+/* ── Shop page layout ────────────────────────────────────
+   Translates the original lg:col-span-3 / lg:col-span-9
+   12-col grid into a plain CSS 1fr/3fr grid.
+   ──────────────────────────────────────────────────────── */
+.shop-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile: stacked */
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .shop-layout {
+    grid-template-columns: 1fr 3fr;  /* lg: sidebar ~25%, content ~75% */
+  }
+}
