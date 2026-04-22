@@ -7,10 +7,7 @@
   padding: var(--space-16) var(--space-6);
 }
 
-/* ── Decorative blur circles (overflow: hidden clips them) ──
-   These extend beyond the section bounds with negative positioning.
-   The `overflow: hidden` on .banner prevents them from leaking visually.
-   ──────────────────────────────────────────────────────────── */
+/* ── Decorative blur circles  ──────────────────────────── */  
 .banner__decoration {
   position: absolute;
   border-radius: 50%;
