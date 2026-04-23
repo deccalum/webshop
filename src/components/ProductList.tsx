@@ -11,12 +11,12 @@ export default function ProductMdList() {
 
   return (
     <div className="productlist">
-      {/* Header: Title + Sort + View */}
+      {/* Section Header */}
       <div className="productlist__section-header">
         <h2 className="productlist__title">All Products</h2>
 
         <div className="productlist__controls">
-          {/* View toggle */}
+          {/* View Toggle */}
           <div className="productlist__view-toggle">
             <button className="productlist__view-btn is-active" aria-label="Grid view">
               <MdDashboard size={18} />
@@ -26,7 +26,7 @@ export default function ProductMdList() {
             </button>
           </div>
 
-          {/* Sort dropdown */}
+          {/* Sort Controls */}
           <label className="productlist__sort">
             <span>Sort:</span>
             <select
@@ -52,7 +52,7 @@ export default function ProductMdList() {
         ))}
       </div>
 
-      {/* Pagination (cosmetic) */}
+      {/* Pagination */}
       <nav className="productlist__pagination" aria-label="Pagination">
         <button className="productlist__pagination-btn" aria-label="Previous page">
           <MdChevronLeft size={18} />

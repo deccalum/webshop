@@ -21,9 +21,11 @@ export default function Sidebar() {
 
   return (
     <aside className="sidebar">
+      {/* Filter Summary */}
       <p>Active Filters: {activeCount}</p>
       <p>Match: {filteredItems.length}</p>
 
+      {/* Category Filters */}
       <section className="sidebar__section">
         <h3 className="sidebar__title">Category</h3>
         <div className="sidebar__filters">
@@ -50,6 +52,7 @@ export default function Sidebar() {
 
       <div className="sidebar__divider" />
 
+      {/* Price Filter */}
       <section className="sidebar__section">
         <h3 className="sidebar__title">Price</h3>
         <div className="sidebar__price-range">
@@ -69,6 +72,7 @@ export default function Sidebar() {
 
       <div className="sidebar__divider" />
 
+      {/* Availability Filters */}
       <section className="sidebar__section">
         <h3 className="sidebar__title">Availability</h3>
         <div className="sidebar__filters">
@@ -93,6 +97,7 @@ export default function Sidebar() {
 
       <div className="sidebar__divider" />
 
+      {/* Sort Controls */}
       <section className="sidebar__section">
         <h3 className="sidebar__title">Sort</h3>
         <div className="sidebar__filters">
@@ -114,6 +119,7 @@ export default function Sidebar() {
 
       <div className="sidebar__divider" />
 
+      {/* Promo Content */}
       <AdBox />
     </aside>
   );

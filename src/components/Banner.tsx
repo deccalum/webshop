@@ -3,11 +3,11 @@ import '../styles/banner.css'
 export default function Banner() {
   return (
     <section className="banner">
-      {/* Decorative blur circles */}
+      {/* Decorative Elements */}
       <div className="banner__decoration banner__decoration--left" />
       <div className="banner__decoration banner__decoration--right" />
 
-      {/* Content wrapper */}
+      {/* Newsletter Content */}
       <div className="banner__container">
         <div className="banner__content">
           <h2 className="banner__title">Stay Updated</h2>

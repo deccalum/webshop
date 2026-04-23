@@ -35,6 +35,7 @@ export default function Card({
 
   return (
     <article className="card">
+      {/* Product Media */}
       <div className="card__image-wrapper">
         <img src={image} alt={title} className="card__image" />
 
@@ -56,7 +57,9 @@ export default function Card({
         )}
       </div>
 
+      {/* Product Details */}
       <div className="card__content">
+        {/* Meta Info */}
         <div className="card__meta">
           <span className="card__category">{category}</span>
           <div className="card__rating">
@@ -67,6 +70,7 @@ export default function Card({
 
         <h3 className="card__title">{title}</h3>
 
+        {/* Pricing and Purchase Controls */}
         <div className="card__footer">
           <div className="card__prices">
             {originalPrice && <span className="card__original-price">{originalPrice} kr</span>}
