@@ -1,9 +1,14 @@
 import { MdChevronLeft, MdChevronRight, MdDashboard, MdList } from 'react-icons/md'
 import Card from './Card'
 import { MOCK_PRODUCTS } from '../data/mockproducts'
+import { selectVisibleProducts, toSortKey, SORT_OPTIONS } from '../features/shop/selectors'
+import { useShopFilters } from '../features/shop/state'
 import '../styles/productlist.css'
 
 export default function ProductMdList() {
+  const { state, setSortKey } = useShopFilters()
+  const visibleProducts = selectVisibleProducts(MOCK_PRODUCTS, state)
+
   return (
     <div className="productlist">
       {/* Header: Title + Sort + View */}
@@ -11,7 +16,7 @@ export default function ProductMdList() {
         <h2 className="productlist__title">All Products</h2>
 
         <div className="productlist__controls">
-          {/* View toggle (cosmetic) */}
+          {/* View toggle */}
           <div className="productlist__view-toggle">
             <button className="productlist__view-btn is-active" aria-label="Grid view">
               <MdDashboard size={18} />
@@ -21,14 +26,18 @@ export default function ProductMdList() {
             </button>
           </div>
 
-          {/* Sort dropdown (cosmetic) */}
+          {/* Sort dropdown */}
           <label className="productlist__sort">
             <span>Sort:</span>
-            <select disabled>
-              <option>Relevance</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Newest Arrivals</option>
+            <select
+              value={state.sortKey}
+              onChange={(e) => setSortKey(toSortKey(e.target.value))}
+            >
+              {SORT_OPTIONS.map((option) => (
+                <option key={option.value || 'none'} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </label>
         </div>
@@ -38,7 +47,7 @@ export default function ProductMdList() {
 
       {/* Product Grid */}
       <div className="productlist__grid productlist__grid--grid">
-        {MOCK_PRODUCTS.map((product) => (
+        {visibleProducts.map((product) => (
           <Card key={product.id} {...product} />
         ))}
       </div>
